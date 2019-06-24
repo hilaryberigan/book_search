@@ -10,14 +10,14 @@ module Books
 
     def push_to_attributes(item)
       @id = item["id"]
-      @publisher = item["publisher"]
-      @preview_link = item["previewLink"]
-      @info_link = item["infoLink"]
-
       volume = item["volumeInfo"]
+      
       @authors = volume["authors"]
       @title = volume["title"]
-      @subtitle = volume["subtitle"] 
+      @subtitle = volume["subtitle"]
+      @publisher = volume["publisher"]
+      @preview_link = volume["previewLink"]
+      @info_link = volume["infoLink"] 
       
       imageLinks = volume["imageLinks"]
       @small_thumbnail = imageLinks["smallThumbnail"]
