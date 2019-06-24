@@ -19,14 +19,15 @@ class BooksApi
 
 private 
   def parameters
+  	max = @options[:max_results] || 10
   	@parameters ||=
     { 
       filter: @options[:filter],
       langRestrict: @options[:lang_restrict],
-      maxResults: @options[:max_results] || 5,
+      maxResults: max,
       orderBy: @options[:order_by],
       projection: @options[:projection],     
-      startIndex: @options[:start_index],
+      startIndex: (max.to_i * (@options[:current_page].to_i - 1)) + 1,
       volumeId: @options[:volume_id],
       key: @options[:key],
       fields: @options[:fields],
@@ -36,7 +37,7 @@ private
 
   def send_api_request(url)
   	response = HTTParty.get(url)
-  	Books::Response.new(response.parsed_response["items"])
+  	Books::Response.new(response)
   end
 
   def root_url

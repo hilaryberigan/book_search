@@ -2,7 +2,8 @@ class VolumesController < ApplicationController
   require 'books_api'
   def index
   	@volumes = []
-  	return if search_input.blank?
+  	@search = {}
+  	return @search[:current_page] = 1 if search_input.blank?
     books_api = BooksApi.new(search_filters)
     response = books_api.list(search_input)
     @volumes = response.volumes
@@ -17,7 +18,7 @@ class VolumesController < ApplicationController
 
 private 
   def search_filters
-    params.require(:search).permit([ :filter, :lang_restrict, :max_results , :order_by, :projection, :start_index, :volume_id, :fields])
+    params.require(:search).permit([ :filter, :lang_restrict, :max_results , :order_by, :projection, :current_page, :volume_id, :fields])
   end
 
   def search_input

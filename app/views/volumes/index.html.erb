@@ -1,5 +1,6 @@
 <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%= f.input 'input', input_html: {value: ""} %>   
+  <%= f.input 'input', input_html: {value: ""} %> 
+  <%= f.input 'current_page', input_html: {value: @search[:current_page]} %>  
   <%= f.submit "Search", class: "btn btn-primary" %>
 <% end %>
 
