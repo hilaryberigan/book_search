@@ -27,7 +27,7 @@ private
       maxResults: max,
       orderBy: @options[:order_by],
       projection: @options[:projection],     
-      startIndex: (max.to_i * (@options[:current_page].to_i - 1)) + 1,
+      startIndex: (max.to_i * (@options[:start_page].to_i - 1)) + 1,
       volumeId: @options[:volume_id],
       key: @options[:key],
       fields: @options[:fields],

@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="search_bar" style="padding: 20px;">
+
+	  <h1>Books Search</h1>
+	  <%= render partial: "search_form", locals: {search: @search} %>
+	</div>  
+	<% if @search[:total_pages].present? %>
+	  
+	  <div class="container">
+		<div class="row">
+	      
+		  <div class="col-xs-12 col-sm-8 offset-sm-2">	    
+		    <% @volumes.each do |volume| %>
+		      <div class="row" style="padding: 20px;">
+		      	<div class="card">
+		          <div class='col-md-3 card-img-top'>
+		            <%= image_tag("#{volume.small_thumbnail}", class: 'image ')%>
+		          </div>
+		      	  <div class='col-md-6 card-body'>
+		      	    <h3><%= volume&.title %></h3>
+		            <p><%= volume&.authors %> | <%= volume&.publisher %></p>
+		            
+		          </div>
+		        </div>
+		      </div>
+		    <% end %>
+		  </div>
+		</div>
+	  
+	    <%= render partial: "pagination", locals: {search: @search} %>
+	  </div>
+	<% end %>
+</div>

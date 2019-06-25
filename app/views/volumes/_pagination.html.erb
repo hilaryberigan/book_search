@@ -1,0 +1,13 @@
+<ul class="pagination justify-content-center">
+	<%if @search[:start_page].to_i == 1 %>
+    <li class="page-item disabled" >
+  <% else %>
+    <li class="page-item" >
+  <% end %>
+    <%=link_to 'Previous', volumes_search_path(page: ([(@search[:start_page].to_i - 1),1].max), search: {input: @search[:input]}), class: "page-link" %></li>
+
+  <% (@search[:start_page].to_i).upto(@search[:end_page].to_i) do |page_number| %>
+    <li class="page-item"><%=link_to page_number.to_s, volumes_search_path(page: page_number, search: {input: @search[:input]}), class: "page-link", value: page_number.to_s %></li>
+  <% end %>
+  <li class="page-item"><%=link_to 'Next', volumes_search_path(page: (@search[:start_page].to_i + 1), search: {input: @search[:input]}), class: "page-link" %></li>
+</ul>

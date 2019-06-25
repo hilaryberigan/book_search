@@ -12,7 +12,7 @@ module Books
       @id = item["id"]
       volume = item["volumeInfo"]
       
-      @authors = volume["authors"]
+      @authors = volume["authors"].join(', ')
       @title = volume["title"]
       @subtitle = volume["subtitle"]
       @publisher = volume["publisher"]

@@ -1,0 +1,6 @@
+<div class="justify-content-center">
+  <%=form_tag(volumes_search_path, :method => "get", :class => "md-form active-purple active-purple-2 mb-3 ", 'accept-charset'=>"UTF-8") do %>
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search" id= "search_input" name="search[input]" value="<%=@search[:input] %>">
+    <input type="submit" name="commit" value= "Search" class="btn btn-primary" data-disable-with="Search">
+  <% end %>
+</div>

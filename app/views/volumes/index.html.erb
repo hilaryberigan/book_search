@@ -1,23 +1,8 @@
-<%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%= f.input 'input', input_html: {value: ""} %> 
-  <%= f.input 'current_page', input_html: {value: @search[:current_page]} %>  
-  <%= f.submit "Search", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+	<div class="search_bar" style="padding: 20px;">
 
-<%if @volumes.present?%>
-  <div class="container">
-	  <div class="row">
-	    <div class="col-xs-12 col-sm-8 offset-sm-2">
-	      <h1>Volumes</h1>
-	      <% @volumes.each do |volume| %>
-	        <h3><%= volume.title %></h3>
-	        <p><%= volume.publisher %></p>
-	        <%= image_tag("#{volume.thumbnail}", class: 'image')%>
-	        <% volume.authors.each do |author| %>
-	          <p><%= author %></p>
-	        <% end %>
-	      <% end %>
-	    </div>
-	  </div>
-	</div>
-<% end%>
+	  <h1>Books Search</h1>
+	  <%= render partial: "search_form", locals: {search: @search} %>
+	</div>  
+
+</div>
