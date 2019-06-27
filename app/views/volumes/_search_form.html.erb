@@ -6,7 +6,7 @@
       </div>
       <div class="col-lg-4">
         <%=form_tag(volumes_search_path, :method => "get", :class => "form-inline md-form mb-3 ", 'accept-charset'=>"UTF-8") do %>
-         <input class="form-control mr-md-5" type="text" placeholder="Search" aria-label="Search" id= "search_input" name="search[input]" value="<%=@search[:input] %>" />
+         <input class="form-control mr-md-5" type="text" placeholder="Keywords.." aria-label="Search" id= "search_input" name="search[input]" value="<%=@search[:input] %>" />
      </div>
           <div class="col-lg-2">
             <button type="submit" name="commit" value= "Search" class="btn my-2 my-sm-0 btn-outline-secondary" data-disable-with="Search"> Search</button>
