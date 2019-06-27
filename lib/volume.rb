@@ -1,3 +1,5 @@
+## object representing each book resources, pulling in specific data 
+
 module Books
   class Volume
   	attr_reader :publisher, :authors, :title, :subtitle, :id,
@@ -12,7 +14,7 @@ module Books
       @id = item["id"]
       volume = item["volumeInfo"]
       
-      @authors = volume["authors"].join(', ')
+      @authors = (volume["authors"] || [])&.join(', ')
       @title = volume["title"]
       @subtitle = volume["subtitle"]
       @publisher = volume["publisher"]

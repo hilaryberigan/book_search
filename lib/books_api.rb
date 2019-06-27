@@ -10,6 +10,8 @@ class BooksApi
     parameters[:q] = query if query.present?
     formatted_query = parameters.map{|key, value| "#{key}=#{value}"}.join('&')
     send_api_request("#{root_url}?#{formatted_query}")
+
+
   end
 
   def search(query)
@@ -37,7 +39,7 @@ private
 
   def send_api_request(url)
   	response = HTTParty.get(url)
-  	Books::Response.new(response)
+  	Books::Response.new(response, @options[:max_results], @options[:start_page])
   end
 
   def root_url
