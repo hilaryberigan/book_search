@@ -24,7 +24,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'simple_form'
-#gem 'pg', '< 1.0' 
+gem 'pg', '< 1.0' 
+gem 'sqlite3', group: :development
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
