@@ -12,7 +12,7 @@ module Books
 
     def push_to_attributes(item)
       @id = item["id"]
-      volume = item["volumeInfo"]
+      volume = item["volumeInfo"] || {}
       
       @authors = (volume["authors"] || [])&.join(', ')
       @title = volume["title"]
@@ -21,7 +21,7 @@ module Books
       @preview_link = volume["previewLink"]
       @info_link = volume["infoLink"] 
       
-      imageLinks = volume["imageLinks"]
+      imageLinks = volume["imageLinks"] || {}
       @small_thumbnail = imageLinks["smallThumbnail"]
       @thumbnail = imageLinks["thumbnail"]
       @small = imageLinks["small"]
