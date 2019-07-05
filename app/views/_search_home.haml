@@ -1,0 +1,14 @@
+.navbar.navbar-light.bg-light.container
+  .row
+    .col-sm-6
+      %h1 Google Books Search
+      =form_tag(volumes_search_path, :method => "get", :class => "col-sm-4 form-inline md-form mb-3 ", 'accept-charset'=>"UTF-8") do |form|
+        %input.form-control.mr-md-5{type="text" placeholder="Keywords.." aria-label="Search" id= "search_input" name="search[input]" value=@search[:input]}
+      .col-sm-2
+        %button{ type="submit" name="commit" value= "Search" class="btn my-2 my-sm-0 btn-outline-secondary" data-disable-with="Search"}Search 
+        = if @response&.total_items.present?
+      <p> <strong><%= @response&.total_items%></strong> Total Results</p>
+    <% end %>
+    </div>
+
+</nav>

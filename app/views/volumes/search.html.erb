@@ -24,5 +24,11 @@
 		</div>	  
 	    <%= render partial: "pagination", locals: {search: @search, response: @response} %>
 	  </div>
+	<% else %>
+		<div class="container">
+			<div class="row text-center">
+				<h3> No results found for search "<%=@search[:input]%>"</h3>
+			</div>
+		</div>
 	<% end %>
 </div>
