@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Google Books API Search
 
-Things you may want to cover:
+A small application built with Ruby on Rails that leverages the Google Books API to search for books and link users to more information about the book.
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* Configuration
+### Prerequisites
 
-* Database creation
+```
+ruby version 2.6.0
+```
 
-* Database initialization
+### Installing
 
-* How to run the test suite
+* You'll need a GitHub account. Sign in.
+* Click the "Fork" button of this repo at https://github.com/hilaryberigan/book_search.
+* You'll now have your own copy of the repository in your github account.
+* Open a terminal/shel.
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ git clone git@github.com/username/the_repo
+```
+where username is your username.
+* Now you have a local copy of your version of the repository.
+* Change into that project directory (the_repo).
+```
+$ cd the_repo
+```
 
-* Deployment instructions
+## Running the tests
 
-* ...
+
+## Authors
+
+* **Hilary Berigan**
